@@ -13,13 +13,18 @@ tupleList = [("A", 1), ("B", 2), ("C", 3), ("D", 4), ("E", 5), ("F", 6)]
 result = tupleToDict(tupleList)
 print(result)
 
+
+
 #Función que reciba una cadena y devuelva un diccionario con la cantidad de repeticiones de cada palabra en la cadena
+import re
 def wordCount(string):
-    words = string.split()  
+    
+    string = re.sub(r'[^\w\s]', '', string)  
+    words = string.split() 
     wordDict = {}  
     
     for word in words:
-        word = word.lower()  
+        word = word.lower() 
         if word not in wordDict:
             wordDict[word] = 1  
         else:
@@ -27,6 +32,6 @@ def wordCount(string):
     
     return wordDict
 
-inputString = "Esto esto esto aquello allí aquello"
+inputString = "Esto, esto, esto. aquello: allí, aquello!"
 result = wordCount(inputString)
 print(result)
