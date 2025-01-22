@@ -32,6 +32,6 @@ def wordCount(string):
     
     return wordDict
 
-inputString = "Esto, esto, esto. aquello: allí, aquello!"
+inputString = "Esto, esto, esto. aquello: allí, alli aquello!"
 result = wordCount(inputString)
 print(result)
